@@ -11,27 +11,6 @@
 </md-content>
 <md-content class="md-padding">
     <form name="userForm">
-        <div layout layout-sm="column">
-            <md-input-container flex="80">
-                <label>Company (Disabled)</label>
-                <input ng-model="vm.user.company" disabled>
-            </md-input-container>
-            <md-input-container flex>
-                <label>Submission Date</label>
-                <input type="date" ng-model="vm.user.submissionDate">
-            </md-input-container>
-        </div>
-        <div layout layout-sm="column">
-            <md-input-container flex>
-                <label>First Name</label>
-                <input ng-model="vm.user.firstName"
-                       placeholder="Placeholder text">
-            </md-input-container>
-            <md-input-container flex>
-                <label>Last Name</label>
-                <input ng-model="vm.user.lastName">
-            </md-input-container>
-        </div>
         <md-input-container flex>
             <label>Address</label>
             <input ng-model="vm.user.address">
@@ -55,5 +34,26 @@
             <textarea ng-model="vm.user.biography" columns="1"
                       md-maxlength="150"></textarea>
         </md-input-container>
+         <div layout layout-sm="column">
+            <md-input-container flex="80">
+                <label>Company (Disabled)</label>
+                <input ng-model="vm.user.company" disabled>
+            </md-input-container>
+            <md-input-container flex>
+                <label>Submission Date</label>
+                <input type="date" ng-model="vm.user.submissionDate">
+            </md-input-container>
+        </div>
+        <div layout layout-sm="column">
+            <md-input-container flex>
+                <label>First Name</label>
+                <input ng-model="vm.user.firstName"
+                       placeholder="Placeholder text">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Last Name</label>
+                <input ng-model="vm.user.lastName">
+            </md-input-container>
+        </div>
     </form>
 </md-content>
