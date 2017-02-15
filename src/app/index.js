@@ -4,6 +4,39 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
   'ngSanitize', 'ui.router', 'ngMaterial', 'nvd3', 'app'])
 
   .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider,
+    $stateProvider
+      .state('home', {
+        url: '',
+        templateUrl: 'app/views/main.html',
+        controller: 'MainController',
+        controllerAs: 'vm',
+        abstract: true
+      })
+      .state('home.dashboard', {
+        url: '/dashboard',
+        templateUrl: 'app/views/dashboard.html',
+        data: {
+          title: 'Dashboard'
+        }
+      })
+      .state('home.profile', {
+        url: '/profile',
+        templateUrl: 'app/views/profile.html',
+        controller: 'ProfileController',
+        controllerAs: 'vm',
+        data: {
+          title: 'Profile'
+        }
+      })
+      .state('home.table', {
+        url: '/table',
+        controller: 'TableController',
+        controllerAs: 'vm',
+        templateUrl: 'app/views/table.html',
+        data: {
+          title: 'Table'
+        }
+      });
                     $mdIconProvider) {
     $stateProvider
       .state('home', {
@@ -39,6 +72,22 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
         }
       });
 
+$mdThemingProvider.definePalette('defaultPrimary', {
+      '50':  '#FFFFFF',
+      '100': 'rgb(255, 198, 197)',
+      '200': '#E75753',
+      '300': '#E75753',
+      '400': '#E75753',
+      '500': '#E75753',
+      '600': '#E75753',
+      '700': '#E75753',
+      '800': '#E75753',
+      '900': '#E75753',
+      'A100': '#E75753',
+      'A200': '#E75753',
+      'A400': '#E75753',
+      'A700': '#E75753'
+    });
     $urlRouterProvider.otherwise('/dashboard');
 
     $mdThemingProvider
