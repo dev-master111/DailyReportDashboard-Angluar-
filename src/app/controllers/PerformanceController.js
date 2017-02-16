@@ -44,7 +44,63 @@
         }
 
         function changePeriod() {
-            loadData();
+           chart: {
+                type: 'stackedAreaChart',
+                height: 350,
+                margin: { left: -15, right: -15 },
+                x: function (d) { return d[0] },
+                y: function (d) { return d[1] },
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                showYAxis: false,
+                showXAxis: false,
+                color: ['rgb(0, 150, 136)', 'rgb(204, 203, 203)', 'rgb(149, 149, 149)', 'rgb(44, 44, 44)'],
+                tooltip: { contentGenerator: function (d) { return '<div class="custom-tooltip">' + d.point.y + '%</div>' + '<div class="custom-tooltip">' + d.series[0].key + '</div>' } },
+                showControls: false
+            }
+        }
+
+        function activate() {
+            var queries = [loadData()];
+            chart: {
+                type: 'stackedAreaChart',
+                height: 350,
+                margin: { left: -15, right: -15 },
+                x: function (d) { return d[0] },
+                y: function (d) { return d[1] },
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                showYAxis: false,
+                showXAxis: false,
+                color: ['rgb(0, 150, 136)', 'rgb(204, 203, 203)', 'rgb(149, 149, 149)', 'rgb(44, 44, 44)'],
+                tooltip: { contentGenerator: function (d) { return '<div class="custom-tooltip">' + d.point.y + '%</div>' + '<div class="custom-tooltip">' + d.series[0].key + '</div>' } },
+                showControls: false
+            }
+        }
+
+
+        function ShowData() {
+            vm.performanceChartData = performanceService.getPerformanceData(vm.performancePeriod);
+        }
+
+        function showStatus() {
+            chart: {
+                type: 'stackedAreaChart',
+                height: 350,
+                margin: { left: -15, right: -15 },
+                x: function (d) { return d[0] },
+                y: function (d) { return d[1] },
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                showYAxis: false,
+                showXAxis: false,
+                color: ['rgb(0, 150, 136)', 'rgb(204, 203, 203)', 'rgb(149, 149, 149)', 'rgb(44, 44, 44)'],
+                tooltip: { contentGenerator: function (d) { return '<div class="custom-tooltip">' + d.point.y + '%</div>' + '<div class="custom-tooltip">' + d.series[0].key + '</div>' } },
+                showControls: false
+            }
         }
     }
 })();
