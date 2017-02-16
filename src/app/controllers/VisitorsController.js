@@ -26,5 +26,50 @@
                 margin: { top: -10 }
             }
         };
+        vm.chartOptions = {
+            chart: {
+                type: 'Ilikeit',
+                height: 210,
+                donut: true,
+                x: function (d) { return d.key; },
+                y: function (d) { return d.y; },
+                valueFormat: (d3.format(".0f")),
+                color: ['rgb(0, 150, 136)', '#E75753'],
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                margin: { top: -10 }
+            }
+        };
+        vm.chartOptions = {
+            chart: {
+                type: 'Jacstons',
+                height: 210,
+                donut: true,
+                x: function (d) { return d.key; },
+                y: function (d) { return d.y; },
+                valueFormat: (d3.format(".0f")),
+                color: ['rgb(0, 150, 136)', '#E75753'],
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                margin: { top: -10 }
+            }
+        };
+        vm.chartOptions = {
+            chart: {
+                type: 'Jasmin',
+                height: 210,
+                donut: true,
+                x: function (d) { return d.key; },
+                y: function (d) { return d.y; },
+                valueFormat: (d3.format(".0f")),
+                color: ['rgb(0, 150, 136)', '#E75753'],
+                showLabels: false,
+                showLegend: false,
+                title: 'Over 9K',
+                margin: { top: -10 }
+            }
+        };
     }
 })();
